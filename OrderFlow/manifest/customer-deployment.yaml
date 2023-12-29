@@ -1,0 +1,45 @@
+# customer-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer
+  template:
+    metadata:
+      labels:
+        app: customer
+    spec:
+      containers:
+      - name: customer-container
+        image: fbhdevomsacr.azurecr.io/customers:latest
+        ports:
+        - containerPort: 3002
+        imagePullPolicy: Always
+        env:
+        - name: ACCOUNT_MANAGEMENT_URL
+          value: "http://account-app-service"
+        - name: PRODUCTS_URL
+          value: "http://product-service"
+        - name: CUSTOMERS_URL
+          value: "http://customer-service"
+        - name: ORDERS_URL
+          value: "http://order-service"
+
+---
+# customer-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3002
+  type: ClusterIP

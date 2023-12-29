@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-fd-ingress-test-devns
+  annotations:
+    # Uncomment the following if you're using nginx-ingress-controller prior to v1.0.0
+    # kubernetes.io/ingress.class: "nginx"
+    # Use the following annotation if you need to use regex in NGINX Ingress prior to v1.0.0
+    # nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx  # Make sure the ingress class matches your nginx ingress controller setup
+  rules:
+  - host: "orderflow-dev.foboh.com.au"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"  # Default path for account-app-service
+        backend:
+          service:
+            name: account-app-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/main/orders/"  # Exact path for the orders remoteEntry.js
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/main/orders/remoteEntry.js"  # Prefix path for the orders remoteEntry.js
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/main/customers/"  # Prefix path for customer-service
+        backend:
+          service:
+            name: customer-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/main/products/"  # Prefix path for product-service
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 80

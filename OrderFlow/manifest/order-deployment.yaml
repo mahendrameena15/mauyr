@@ -1,0 +1,44 @@
+# order-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+      - name: order-container
+        image: fbhdevomsacr.azurecr.io/order:latest
+        ports:
+        - containerPort: 3003
+        imagePullPolicy: Always
+        # env:
+        # - name: ACCOUNT_MANAGEMENT_URL
+        #   value: "http://account-app-service"
+        # - name: PRODUCTS_URL
+        #   value: "http://product-service"
+        # - name: CUSTOMERS_URL
+        #   value: "http://customer-service"
+        # - name: ORDERS_URL
+        #   value: "http://order-service"
+---
+# order-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+spec:
+  selector:
+    app: order
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3003
+  type: ClusterIP

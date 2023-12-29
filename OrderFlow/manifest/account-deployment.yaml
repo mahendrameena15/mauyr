@@ -1,0 +1,45 @@
+# account-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account
+  template:
+    metadata:
+      labels:
+        app: account
+    spec:
+      containers:
+      - name: account-container
+        image: fbhdevomsacr.azurecr.io/account-management:latest
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+        env:
+        - name: ACCOUNT_MANAGEMENT_URL
+          value: "https://orderflow-dev.foboh.com.au"
+        - name: PRODUCTS_URL
+          value: "http://product-service"
+        - name: CUSTOMERS_URL
+          value: "http://customer-service"
+        - name: ORDERS_URL
+          value: "https://orderflow-dev.foboh.com.au/main/orders/remoteEntry.js"
+
+---
+# account-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-app-service
+spec:
+  selector:
+    app: account
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: ClusterIP  # or LoadBalancer

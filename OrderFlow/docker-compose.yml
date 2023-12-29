@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  customers:
+    build:
+      context: .
+      dockerfile: micro-frontend/customers/Dockerfile
+    ports:
+      - "3002:3002"
+
+  account_management:
+    build:
+      context: .
+      dockerfile: micro-frontend/account_management/Dockerfile
+    ports:
+      - "3000:3000"
+
+  products:
+    build:
+      context: .
+      dockerfile: micro-frontend/products/Dockerfile
+    ports:
+      - "3001:3001"
+
+  supplier_order_management:
+    build:
+      context: .
+      dockerfile: micro-frontend/supplier_order_management/Dockerfile
+    ports:
+      - "3003:3003"      

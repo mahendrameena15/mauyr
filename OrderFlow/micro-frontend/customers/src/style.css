@@ -1,0 +1,218 @@
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.text-end {
+  text-align: end;
+}
+.w-3\/4 {
+  width: 75%;
+}
+.px-12 {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.rounded-s-lg {
+  border-top-left-radius: 8px;
+}
+.rounded-e-lg {
+  border-top-right-radius: 8px;
+}
+.customer-tab-active .fill-1 {
+  fill: #000 !important;
+}
+.address-box {
+  transition: 0.4s ease-in-out;
+}
+.address-box:hover {
+  transition: 0.4s ease-in-out;
+  transform: translateY(-6px);
+  box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 48%);
+}
+.customer-tab {
+  transition: 0.3s ease-in-out;
+}
+.customer-tab-active {
+  transition: 0.3s ease-in-out;
+}
+.hide-table {
+  transition: 0.3s ease-in-out;
+}
+.active-table {
+  /* transition: 0.3s ease-in-out; */
+  animation: show-animation 1s;
+}
+
+@keyframes show-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-animation:hover {
+  color: #fff;
+}
+.btn-animation:hover::before {
+  top: 0%;
+}
+.btn-animation::before {
+  content: "";
+  position: absolute;
+  -webkit-transition-duration: 800ms;
+  transition-duration: 800ms;
+  width: 200%;
+  height: 200%;
+  top: 110%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 30%;
+  z-index: -1;
+  background-color: #0a665e;
+}
+.top-16 {
+  top: 4rem /* 64px */;
+}
+.pb-7 {
+  padding-bottom: 1.75rem /* 28px */;
+}
+.py-3\.5 {
+  padding-top: 0.875rem /* 14px */;
+  padding-bottom: 0.875rem /* 14px */;
+}
+.custom-stepper .bg-blue-500 {
+  background-color: #147d73 !important;
+}
+.custom-stepper .bg-blue-gray-200 {
+  background-color: #637381 !important;
+}
+.custom-stepper .w-10 {
+  width: 24px;
+  height: 24px;
+}
+.custom-stepper .bg-blue-500,
+.custom-stepper .bg-blue-gray-200 {
+  /* width: 20px !important;
+  height: 20px !important; */
+  font-size: 12px;
+  font-weight: 400;
+  /* border-radius: 50%; */
+  justify-content: center;
+  align-items: center;
+}
+.top-7 {
+  top: 1.75rem; /* 28px */
+}
+.custom-stepper p {
+  font-size: 8px !important;
+  font-weight: 400 !important;
+}
+.custom-stepper .bg-blue-500 p {
+  color: #147d73 !important;
+}
+.custom-stepper .bg-blue-gray-200 p {
+  color: #637381 !important;
+}
+.bg-blue-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(176 190 197 / var(--tw-bg-opacity));
+}
+.-translate-x-2\/4,
+.-translate-y-2\/4 {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-2\/4 {
+  --tw-translate-y: -50%;
+}
+.h-0\.5 {
+  height: 1px;
+}
+.top-2\/4 {
+  top: 50%;
+}
+.px-20 {
+  padding-left: 5rem /* 80px */;
+  padding-right: 5rem /* 80px */;
+}
+.-left-84 {
+  left: -25px;
+}
+
+.pb-20 {
+  padding-bottom: 5rem /* 80px */;
+}
+@media (min-width: 1024px) {
+  .-left-84 {
+    left: -60px;
+  }
+  .custom-stepper p {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+  .lg\:px-20 {
+    padding-left: 5rem /* 80px */;
+    padding-right: 5rem /* 80px */;
+  }
+}
+.px-10 {
+  padding-left: 2.5rem /* 40px */;
+  padding-right: 2.5rem /* 40px */;
+}
+.h-85 {
+  height: 50vh;
+}
+.arrow-true img {
+  transform: rotate(180deg);
+}
+.bBfHpH,
+.dZkckO {
+  top: 53%;
+}
+.custom-stepper .bg-gray-300 {
+  background-color: #637381;
+}
+.custom-stepper .text-gray-900 {
+  color: #fff;
+}
+.custom-stepper .bg-gray-900 {
+  background-color: #12736a;
+}
+.basic-multi-select-2 .select__control {
+  border-width: 0px !important;
+
+  /* padding: 0 !important; */
+}
+.basic-multi-select-2 .css-1u9des2-indicatorSeparator {
+  width: 0px !important;
+}
+.green-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.green-checkbox input[type="checkbox"]:checked {
+  background-color: white;
+  border: 1px solid #147d73;
+}
+
+.green-checkbox input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: #147d73;
+}

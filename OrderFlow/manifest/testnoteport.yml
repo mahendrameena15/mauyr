@@ -1,0 +1,44 @@
+# account-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account
+  template:
+    metadata:
+      labels:
+        app: account
+    spec:
+      containers:
+      - name: account-container
+        image: am:local
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Never
+
+        env:
+        - name: product-svc
+          value: "product-service:3001"
+        - name: customer-svc
+          value: "customer-service:3002"
+        - name: order-svc
+          value: "order-service:3003"
+---
+# account-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-app-service
+spec:
+  selector:
+    app: account
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 31000
+  type: NodePort  # or LoadBalancer

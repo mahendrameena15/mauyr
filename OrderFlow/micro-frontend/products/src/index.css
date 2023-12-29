@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nunito Sans */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+/* Open Sans  */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/* Lexend  */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
+/* Mulish  */
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+/* Inter  */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+h1 {
+  font-family: "Inter";
+
+  font-weight: 800;
+
+  color: black;
+}
+
+h2 {
+  font-family: "Inter";
+
+  font-weight: 800;
+
+  color: #264348;
+}
+
+h3 {
+  font-family: "Inter";
+
+  font: italic;
+
+  color: #0e7c61;
+}
+
+p {
+  font-family: "Inter";
+
+  color: black;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+label {
+  color: #2b4447 !important;
+
+  font-size: 16px;
+
+  font-family: "Inter";
+
+  line-height: 140%;
+
+  font-weight: bold;
+}
+
+a:hover {
+  color: #04524a;
+
+  text-decoration: underline;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+  display: block;
+
+  padding: 12px 20px;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  color: #a0aec0;
+
+  font-weight: 400;
+
+  font-size: 16px;
+
+  font-family: "Inter";
+
+  line-height: 140%;
+
+  width: 100%;
+
+  outline: 0;
+
+  color: #000;
+
+  border-radius: 6px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #fff;
+
+  margin-top: 10px;
+
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border: 1px solid #147d73 !important;
+}
+
+button.foboh-green-btn,
+input.foboh-green-btn,
+a.foboh-green-btn {
+  color: #fcfcfc;
+
+  font-size: 16px;
+
+  font-family: "Inter";
+
+  font-weight: 700;
+
+  border-radius: 15px;
+
+  background: #147d73;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  display: block;
+
+  text-align: center;
+
+  width: 100%;
+
+  padding: 9px;
+
+  outline: 0;
+
+  transition: all 0.2s;
+
+  text-decoration: none;
+}
+
+button.foboh-green-btn:hover,
+input.foboh-green-btn:hover,
+a.foboh-green-btn:hover {
+  background: #04524a;
+
+  transform: scale(1.02);
+}
+
+.google-btn button {
+  background-color: none !important;
+
+  position: relative;
+
+  color: none !important;
+
+  box-shadow: none !important;
+
+  padding: 0px;
+
+  border-radius: 2px;
+
+  border: none !important;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  font-family: "Inter";
+
+  position: relative;
+
+  top: 2px;
+}
+
+.google-btn button span {
+  color: #2b4447;
+
+  font-size: 18px;
+
+  font-family: "Inter";
+}
+
+.registration input[type="text"],
+.registration input[type="password"],
+.registration input[type="number"],
+.registration select {
+  display: block;
+
+  padding: 12px 50px;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  color: #a0aec0;
+
+  font-weight: 400;
+
+  font-size: 16px;
+
+  font-family: "Inter";
+
+  line-height: 140%;
+
+  width: 100%;
+
+  outline: 0;
+
+  color: #000;
+
+  border-radius: 10px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #fff;
+
+  margin-top: 15px;
+
+  transition: all 0.3s;
+}
+
+.validation-check {
+  border-color: red !important;
+
+  position: relative;
+}
+
+.ant-btn {
+  color: #fff;
+  background-color: #04524a;
+}
