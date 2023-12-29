@@ -7,9 +7,9 @@
 
 module.exports = {
   accountManagementUrl: "https://orderflow-dev.foboh.com.au",
-  productsUrl: "https://orderflow-dev.foboh.com.au/main/products",
-  customersUrl: "https://orderflow-dev.foboh.com.au/main/customers",
-  ordersUrl: "https://orderflow-dev.foboh.com.au/main/orders",
+  productsUrl: "https://orderflow-dev.foboh.com.au/main/products/",
+  customersUrl: "https://orderflow-dev.foboh.com.au/main/customers/",
+  ordersUrl: "https://orderflow-dev.foboh.com.au/main/orders/",
 };
 
 // module.exports = {
